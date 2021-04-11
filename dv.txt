@@ -1,0 +1,24 @@
+Chụp CLVT sọ não không tiêm thuốc cản quang (từ 1-32 dãy)
+Chụp CLVT hàm-mặt không tiêm thuốc cản quang (từ 1-32 dãy)
+Chụp CLVT tai-xương đá không tiêm thuốc (từ 1-32 dãy)
+Chụp CLVT hốc mắt (từ 1-32 dãy)
+Chụp cắt lớp vi tính lồng ngực không tiêm thuốc cản quang (từ 1- 32 dãy)
+Chụp cắt lớp vi tính tầng trên ổ bụng thường quy (gồm: chụp Cắt lớp vi tính gan-mật, tụy, lách, dạ dày-tá tràng.v.v.) (từ 1-32 dãy)
+Chụp cắt lớp vi tính bụng-tiểu khung thường quy (từ 1-32 dãy)
+Chụp cắt lớp vi tính tiểu khung thường quy (gồm: chụp cắt lớp vi tính tử cung-buồng trứng, tiền liệt tuyến, các khối u vùng tiểu khung.v.v.) (từ 1-32 dãy)
+Chụp cắt lớp vi tính hệ tiết niệu thường quy (từ 1-32 dãy)
+Chụp cắt lớp vi tính khớp thường quy không tiêm thuốc cản quang (từ 1- 32 dãy)
+Chụp CLVT sọ não có tiêm thuốc cản quang (từ 1-32 dãy)
+Siêu âm Doppler Tim
+Chụp phổi thẳng
+CT scaner sọ não
+Siêu âm bụng
+Siêu âm Doppler mạch máu
+Siêu âm Doppler mạch máu hệ tĩnh mạch cửa hoặc mạch máu ổ bụng
+Siêu âm màng phổi
+Chụp Xquang sọ thẳng/nghiêng
+Chụp Xquang cột sống ngực thẳng nghiêng hoặc chếch
+Chụp Xquang cột sống thắt lưng thẳng nghiêng
+Chụp Xquang cột sống thắt lưng chếch hai bên
+Chụp Xquang đường dò
+Chụp Xquang niệu quản-bể thận ngược dòng [Chụp niệu quản - bể thận ngược dòng (UPR) có tiêm thuốc cản quang]
