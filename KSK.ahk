@@ -5,6 +5,7 @@
 SetWorkingDir %A_ScriptDir%
 FileEncoding, utf-8
 
+_dateCheck = 2
 _Code := ""
 A_jump := A_Start := 20 , y_jump := 33
 Loop, 5 {
@@ -21,7 +22,7 @@ Loop, 2 {
     C_jump := C_jump + y_jump
     C_row%A_Index% := C_jump
 }
-Gui Color, CCCCFF
+Gui Color, e0e0eb
 Gui Font, S11, Tahoma
 Gui Font, Bold
 Gui Add, GroupBox, x20 y%A_Start% w1320 h200 cNavy, Thông tin bệnh nhân
@@ -31,22 +32,22 @@ Gui Add, GroupBox, x20 y%C_start% w1320 h330 cNavy, Đăng ký dịch vụ
 Gui, Font, Normal
 ;A_row1
 Gui Add, Text, x40 y%A_row1% w120 h27 +0x200, Mã BN:
-Gui Add, Edit, x150 y%A_row1% w110 Disabled +Border,
+Gui Add, Edit, x150 y%A_row1% w110 Disabled +Border -Theme,
 Gui Add, Text, x280 y%A_row1% h27 +0x200, Họ tên:
 Gui Font, Bold
-Gui Add, Edit, x340 y%A_row1% w180 CNavy,
+Gui Add, Edit, x340 y%A_row1% w180 cNavy vHoTen -Theme,
 Gui FOnt, Normal
 Gui Add, Pic, x525 y%A_row1% h27 w30, %A_ScriptDir%\search.png
 
 Gui Add, Text, x570 y%A_row1% h27 +0x200, Giới tính:
 Gui Add, DropDownList, x690 y%A_row1% w90 -Theme, Nam||Nữ|Chưa xác định
 Gui Add, Text, x790 y%A_row1% h27 +0x200, Ngày sinh:
-Gui Add, DateTime, x880 y%A_row1% w110,
+Gui Add, DateTime, x880 y%A_row1% w110 vngaysinh gInputDate -Theme,
 Gui Add, Text, x1000 y%A_row1% h27 +0x200, Nghề nghiệp:
 Gui Add, DropDownList, x1090 y%A_row1% w230 -Theme, Công nhân||Dịch vụ|Khác
 ;A_row2
 Gui Add, Text, x40 y%A_row2% h27 +0x200, Số nhà/Thôn:
-Gui Add, Edit, x150 y%A_row2% w400 vsonha gsonha,
+Gui Add, Edit, x150 y%A_row2% w400 vsonha gsonha -Theme,
 Gui Add, Text, x570 y74 y%A_row2% h27 +0x200, T/H/X:
 Gui Add, Edit, x690 y%A_row2% w90 -Theme, HCTDTB
 Gui Add, DropDownList, x790 y%A_row2% w130 vtinh gtinh -Theme, Hồ Chí Minh||Đồng Nai
@@ -56,24 +57,24 @@ Gui Add, DropDownList, x1090 y%A_row2% w230 vxa gxa -Theme, Phường 1||Phườ
 Gui Add, Text, x40 y%A_row3% h27 +0x200, ĐC hiện nay:
 Gui Add, Edit, x150 y%A_row3% w400 viadd -Theme Disabled, `,Phường 1, Quận 1, Hồ Chí Minh
 Gui Add, Text, x570 y%A_row3% w150 h27 +0x200, ĐC thường trú:
-Gui Add, Edit, x690 y%A_row3% w90 +Number, LDDTTH
-Gui Add, Edit, x790 y%A_row3% w530, Thon 4a
+Gui Add, Edit, x690 y%A_row3% w90 -Theme, LDDTTH
+Gui Add, Edit, x790 y%A_row3% w530 -Theme, Thon 4a
 ;A_row4
 Gui Add, Text, x40 y%A_row4% w98 h27 +0x200, Điện thoại:
-Gui Add, Edit, x150 y%A_row4% w120 +right +Number,
+Gui Add, Edit, x150 y%A_row4% w120 +right -Theme,
 Gui Add, Text, x280 y%A_row4% h27 +0x200, Email:
-Gui Add, Edit, x350 y%A_row4% w200, Gerhan94@gmail.com
+Gui Add, Edit, x350 y%A_row4% w200 -Theme,
 Gui Add, Text, x570 y%A_row4% h27 +0x200, CMND/CCCD:
-Gui Add, Edit, x690 y%A_row4% w110 +Number,
+Gui Add, Edit, x690 y%A_row4% w110 -Theme,
 Gui Add, Text, x810 y%A_row4% w80 h27 +0x200, Ngày cấp:
-Gui Add, DateTime, x880 y%A_row4% w110 h24
+Gui Add, DateTime, x880 y%A_row4% w110 h24 -Theme,
 Gui Add, Text, x1000 y%A_row4% h27 +0x200, Nơi cấp:
-Gui Add, Edit, x1090 y%A_row4% w230
+Gui Add, Edit, x1090 y%A_row4% w230 -Theme,
 ;A_row5
 Gui Add, Text, x40 y%A_row5% w150 h27 +0x200, Nơi công tác:
-Gui Add, Edit, x150 y%A_row5% w400  +Number
+Gui Add, Edit, x150 y%A_row5% w400 -Theme,
 Gui Add, Text, x570 y%A_row5% h27 +0x200, Ngày bắt đầu làm việc:
-Gui Add, DateTime, x730 y%A_row5% w110
+Gui Add, DateTime, x730 y%A_row5% w110 -Theme,
 
 ;Thông tin khám bệnh
 Gui Add, Text, x40 y%B_row1% h27 +0x200, Phân loại:
@@ -83,8 +84,10 @@ Gui Add, DropDownList, x690 y%B_row1% w250 -theme, Khám tổng quát||Khám s�
 
 Gui Add, Text, x40 y%B_row2% h27 +0x200, Phòng khám:
 Gui Add, DropDownList, x150 y%B_row2% w400 -theme, Phòng X-Quang 1||Phòng khám sức khỏe ngoại viện
-Gui Add, Text, x570 y%B_row2% h27 +0x200, Ngày khám:
-Gui Add, Datetime, x690 y%B_row2% w200 disabled +Border, dd/MM/yyyy HH:mm:ss
+Gui Add, Text, x570 y%B_row2% h27 +0x200, Khách hàng:
+Gui Add, DropDownList, x690 y%B_row2% w250 -Theme +Border, ||KH Công ty TNHH MTV An Bình|Infomed JSC
+Gui Add, Text, x1000 y%B_row2% h27 +0x200, Ngày khám:
+Gui Add, Datetime, x1090 y%B_row2% w220 disabled +Border, dd/MM/yyyy HH:mm:ss
 
 ;Thông tin Dịch vụ
 Gui Font, Bold
@@ -94,10 +97,10 @@ Gui Font, Normal
 Gui Add, Edit, x200 y%C_row1% w300 hWndhEdtValue -theme +Border,
 SendMessage 0x1501, 1, "Tìm kiếm dịch vụ",, ahk_id %hEdtValue%
 
-Gui Add, Button, x650 y500 gAdd, >>
-Gui Add, Button, x650 y540, <<
+Gui Add, Button, x650 y500 w40 gAdd, >
+Gui Add, Button, x650 y540 w40 gRemove, <
 
-Gui Add, ListView, x40 y%C_row2% w600 h250 +grid vList1 gList1 AltSubmit -Multi, Mã DV|Tên DV|Đơn giá|Lấy giá gói|Giới tính|Tên viết tắt
+Gui Add, ListView, x40 y%C_row2% w600 h250 +grid vList1 gList1 AltSubmit -Multi , Mã DV|Tên DV|Đơn giá|Lấy giá gói|Giới tính|Tên viết tắt
     LV_ModifyCol(1, 70)
     LV_ModifyCol(2, 300)
     LV_ModifyCol(3, "100 right")
@@ -105,7 +108,7 @@ Gui Add, ListView, x40 y%C_row2% w600 h250 +grid vList1 gList1 AltSubmit -Multi,
     LV_ModifyCol(5, 80 )
     LV_ModifyCol(6, 100 )
    
-Gui Add, ListView, x700 y%C_row2% w620 h250 +grid vList2, Mã DV|Tên DV|Đơn giá|Mã gói khám
+Gui Add, ListView, x700 y%C_row2% w620 h250 +grid vList2 gList2 AltSubmit , Mã DV|Tên DV|Đơn giá|Mã gói khám
     LV_ModifyCol(1, 70)
     LV_ModifyCol(2, 300)
     LV_ModifyCol(3, "100 right")
@@ -121,6 +124,30 @@ GuiEscape:
 GuiClose:
     ExitApp
 
+;khi nhấn phím Tab, nếu field thuộc Họ tên thì bắt đầu kích hoạt event format string
+~Tab::
+    ControlGetFocus, iControl, KSK
+    If (iControl = "Edit2") {
+        Gui Submit, NoHide
+        ihoten := FormatString(hoten)
+        GuiControl, , hoten, %ihoten%
+    }
+    Return
+
+InputDate:
+    Gui Submit, NoHide
+    If (_dateCheck <> 0) {
+        Send {Right}
+        _dateCheck--
+    }
+    Else {
+        Send {Tab}
+        _dateCheck = 2
+    }
+        
+    Return
+
+
 
 Sonha:
 Tinh:
@@ -134,34 +161,53 @@ Xa:
 List1:
     Gui, ListView, List1
     If (A_GuiEvent = "Normal") {
-        iRow := A_EventInfo
-        LV_GetText(rCode, iRow, 1)
-        LV_GetText(rName, iRow, 2)
-        LV_GetText(rPrice, iRow, 3)
+        rRow := A_EventInfo
+        LV_GetText(rCode, rRow, 1)
+        LV_GetText(rName, rRow, 2)
+        LV_GetText(rPrice, rRow, 3)
+    }
+    Return
+
+List2:
+    ;Gui ListView, List2
+    If (A_GuiEvent = "Normal") {
+        tRow := A_EventInfo
     }
     Return
 
 Add:
     Gui Submit, NoHide
     _check = 0
-    If (iRow <> 0) {
-        Loop, Parse, _code, `|
-        {
-            If (rCode = A_LoopField)
-                _check = 1
-        }
-        If (_check = 1) {
-            Msgbox,,Thông báo, Dịch vụ đã chọn rồi
-            Return
-        }
-        _code .= rCode . "|"
-        Gui, ListView, List2
-        LV_Add("", rCode, rName, rPrice, "ABC")
+    If (rRow = 0) OR (rRow = "")
+        Return
+    Loop, Parse, _code, `|
+    {
+        If (rCode = A_LoopField)
+            _check = 1
     }
-    iRow := 0
+    If (_check = 1) {
+        Msgbox,,Thông báo, Dịch vụ đã chọn rồi
+        Return
+    }
+    _code .= rCode . "|"
+    Gui, ListView, List2
+    LV_Add("", rCode, rName, rPrice, "ABC")
+    rRow := 0
     Return
 
 
+Remove:
+    If (tRow = 0) OR (tRow = "")
+        Return
+    Msgbox, 52, Thông báo, Bạn có muốn xóa?
+    IfMsgBox, Yes 
+    {
+        Gui ListView, List2
+        LV_Delete(tRow)
+        Msgbox, 64, Thông báo, Xóa thành công.
+    }
+    
+    Return
 
 
 readfile()
@@ -198,3 +244,21 @@ Randomstring(len, i = 65, x = 90) { ; length, lowest and highest Asc value
 	    }
 	Return, s
     }
+
+
+;FORMATSTRING
+;Xóa khoảng trắng ở đầu-cuối
+;Loại bỏ khoảng trắng không đúng
+;Viết hoa đầu mỗi chữ
+FormatString(string)
+{
+    NewString := Trim(String)
+    _string := ""
+    Loop, Parse, NewString, %A_Space%
+    {
+        If (A_LoopField <> "")
+            _string .= A_LoopField . " "
+    }
+    StringUpper, _string, _string, T
+    Return, % _string
+}
